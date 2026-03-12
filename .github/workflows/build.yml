@@ -1,0 +1,40 @@
+name: Build Release AppImage
+
+on:
+  push:
+    branches: [ "main" ]
+    tags-ignore:
+      - "v*"
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+           cmake build-essential ninja-build \
+           qt6-base-dev qt6-tools-dev qt6-tools-dev-tools qt6-multimedia-dev qt6-svg-dev \
+           libpoppler-qt6-dev \
+           libopencv-dev \
+           libtesseract-dev libleptonica-dev
+
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OCRtoODT-Linux
+          path: build/OCRtoODT
+
