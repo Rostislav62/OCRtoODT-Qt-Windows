@@ -369,8 +369,13 @@ configure_file(
 
 # ============================================================
 # Build executable (single target)
+#
+# WIN32:
+#   Build as a Windows GUI application instead of a console
+#   application. This prevents the extra terminal window from
+#   appearing when the packaged app is launched by the user.
 # ============================================================
-add_executable(OCRtoODT
+add_executable(OCRtoODT WIN32
     ${APP_SOURCES}
     ${APP_HEADERS}
 
@@ -438,6 +443,7 @@ add_executable(OCRtoODT
     THIRD_PARTY_NOTICES.md
     docs/RELEASE_NOTES_TEMPLATE.md
     docs/RELEASING_WINDOWS.md
+    packaging/windows-deploy-manifest.txt
 )
 
 # ============================================================

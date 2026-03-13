@@ -1,0 +1,59 @@
+# ============================================================
+# OCRtoODT Windows deploy manifest
+# Non-Qt runtime files copied after windeployqt
+# Paths are relative to build/MSVC2022_vcpkg/Release
+# ============================================================
+
+# ------------------------------------------------------------
+# OCR / imaging / PDF runtime DLLs
+# ------------------------------------------------------------
+archive.dll
+avcodec-62.dll
+avformat-62.dll
+avutil-60.dll
+brotlicommon.dll
+brotlidec.dll
+bz2.dll
+D3Dcompiler_47.dll
+double-conversion.dll
+freetype.dll
+gif.dll
+harfbuzz.dll
+jpeg62.dll
+leptonica-1.87.0.dll
+libcrypto-3-x64.dll
+libcurl.dll
+liblzma.dll
+libpng16.dll
+libsharpyuv.dll
+libwebp.dll
+libwebpdecoder.dll
+libwebpdemux.dll
+libwebpmux.dll
+lz4.dll
+md4c.dll
+opencv_core4.dll
+opencv_imgcodecs4.dll
+opencv_imgproc4.dll
+openjp2.dll
+pcre2-16.dll
+poppler.dll
+poppler-qt6.dll
+Qt6Core5Compat.dll
+quazip1-qt6.dll
+swresample-6.dll
+swscale-9.dll
+tesseract55.dll
+tiff.dll
+zlib1.dll
+zstd.dll
+
+# ------------------------------------------------------------
+# OCR language data
+# ------------------------------------------------------------
+tessdata
+
+# ------------------------------------------------------------
+# Application translations
+# ------------------------------------------------------------
+translations
